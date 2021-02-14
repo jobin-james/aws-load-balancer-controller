@@ -1,12 +1,12 @@
 resource "aws_iam_policy_attachment" "lb_controller" {
 
-  name       = "${var.ou}-${var.controller_name}-iam-policy-attachment"
+  name       = "${var.controller_name}-iam-policy-attachment"
   roles      = [aws_iam_role.lb_controller.name]
   policy_arn = aws_iam_policy.lb_controller.arn
 }
 
 resource "aws_iam_policy" "lb_controller" {
-  name   = "${var.ou}-${var.controller_name}-iam-policy"
+  name   = "${var.controller_name}-iam-policy"
   policy = <<EOF
 {
   "Version": "2012-10-17",
