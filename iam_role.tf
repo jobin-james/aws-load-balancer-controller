@@ -30,6 +30,6 @@ data "aws_iam_policy_document" "cluster" {
 
 resource "aws_iam_role" "lb_controller" {
 
-  name               = "${var.ou}-${var.controller_name}"
+  name               = "${var.controller_name}"
   assume_role_policy = data.aws_iam_policy_document.cluster.json
 }
